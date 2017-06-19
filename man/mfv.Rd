@@ -64,4 +64,3 @@ mfv(c(NA, NA), na.rm = TRUE)     # NaN
   \emph{Mathematical Methods of Statistics}, \bold{19}(4):374--384.
 }
 }
-

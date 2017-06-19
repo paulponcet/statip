@@ -2,8 +2,8 @@
 % Please edit documentation in R/dbern.R
 \name{dbern}
 \alias{dbern}
-\alias{pbern}
 \alias{qbern}
+\alias{pbern}
 \alias{rbern}
 \title{The Bernoulli distribution}
 \usage{
@@ -41,4 +41,3 @@ random generation for the Bernoulli distribution.
 \seealso{
 See the help page of the \code{\link{Binomial}} distribution.
 }
-

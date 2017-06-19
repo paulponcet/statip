@@ -32,4 +32,3 @@ stats::predict(NULL, newdata = data.frame(x = 1:2, y = 2:3))
 \code{\link[stats]{predict}} from package \pkg{stats}, 
 \code{\link[bazar]{is.empty}} from package \pkg{bazar}.
 }
-

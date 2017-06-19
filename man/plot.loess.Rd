@@ -23,4 +23,3 @@ plot(reg)
 \seealso{
 \code{\link[stats]{loess}} from package \pkg{stats}.
 }
-

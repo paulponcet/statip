@@ -23,4 +23,3 @@ defined as \code{erf(x) = 2 * F(x * sqrt(2)) - 1}, where
 \seealso{
 \code{\link[stats]{pnorm}} from package \pkg{stats}.
 }
-

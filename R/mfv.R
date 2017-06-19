@@ -62,7 +62,7 @@ mfv <-
 function(x,
          na.rm = FALSE)
 {
-  cl <- class(x)[[1L]]
+  cl <- typeof(x) #class(x)[[1L]]
   n <- length(x)
   a <- sum(is.na(x))
   if (na.rm) n <- n - a
@@ -77,7 +77,12 @@ function(x,
     if (n2 + a >= n1) return(as.vector(NA, mode = cl))
   }
   lf <- levels(f)[tf == n1]
-  as.vector(lf, mode = cl)
+  
+  if (is.factor(x)) {
+    return(as.factor(lf))
+  } else {
+    return(as.vector(lf, mode = cl))
+  }
 }
 
 

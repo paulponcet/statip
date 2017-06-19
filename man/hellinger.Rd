@@ -45,4 +45,3 @@ hellinger(x, y, -Inf, Inf, method = 2)
 \seealso{
 \code{\link[distrEx]{HellingerDist}} in package \pkg{distrEx}.
 }
-

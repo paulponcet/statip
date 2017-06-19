@@ -41,4 +41,3 @@ lagk(v, -3, na = FALSE, cst = TRUE)
 lagk(v, -3, na = FALSE)
 
 }
-

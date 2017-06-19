@@ -29,4 +29,3 @@ distr2name(c("norm", "dnorm", "rhyper", "ppois"))
 name2distr(c("Cauchy", "Gaussian", "Generalized Extreme Value"))
 
 }
-

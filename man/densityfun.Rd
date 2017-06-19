@@ -65,13 +65,12 @@ f <- densityfun(x, from = 0)
 curve(f(x), xlim = c(0, 20))
 
 }
+\seealso{
+\code{\link[stats]{density}} and \code{\link[stats]{approxfun}} 
+from package \pkg{stats}.
+}
 \author{
 Adapted from the \code{\link[stats]{density}} function of package \pkg{stats}. 
 The C code of \code{BinDist} is copied from package \pkg{stats} and authored 
 by the R Core Team with contributions from Adrian Baddeley.
 }
-\seealso{
-\code{\link[stats]{density}} and \code{\link[stats]{approxfun}} 
-from package \pkg{stats}.
-}
-

@@ -1,8 +1,8 @@
 Package: statip
 Type: Package
 Title: Miscellaneous Basic Statistical Functions
-Version: 0.1.4
-Date: 2017-01-26
+Version: 0.1.5
+Date: 2017-06-19
 Authors@R: c(person("Paul", "Poncet", , "paulponcet@yahoo.fr", role = c("aut", "cre")), 
     person("The R Core Team", role = c("aut", "cph"), 
            comment = "C function 'BinDist' copied from package 'stats'"), 
@@ -32,4 +32,4 @@ Suggests:
     testthat
 URL: https://github.com/paulponcet/statip
 BugReports: https://github.com/paulponcet/statip/issues
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
