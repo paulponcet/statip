@@ -1,6 +1,6 @@
 # statip 0.1.5
 
-* mfv() was not working with factors. 
+* mfv() was not working with factors.
 
 
 # statip 0.1.4
