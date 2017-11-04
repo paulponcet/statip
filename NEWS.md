@@ -1,11 +1,11 @@
 # statip 0.1.5
 
-* mfv() was not working with factors.
+* 'mfv()' was not working with factors.
 
 
 # statip 0.1.4
 
-* Change in mfv() to better take account of missing values. 
+* Change in 'mfv()' to better take account of missing values. 
 
 
 # statip 0.1.3
@@ -20,7 +20,7 @@
 
 # statip 0.1.1
 
-* Functions mfv() and mfv1() for the mode (most frequent value) 
+* Functions 'mfv()' and 'mfv1()' for the mode (most frequent value) 
 found in a vector. 
 
 

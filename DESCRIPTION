@@ -2,7 +2,7 @@ Package: statip
 Type: Package
 Title: Miscellaneous Basic Statistical Functions
 Version: 0.1.5
-Date: 2017-06-19
+Date: 2017-10-01
 Authors@R: c(person("Paul", "Poncet", , "paulponcet@yahoo.fr", role = c("aut", "cre")), 
     person("The R Core Team", role = c("aut", "cph"), 
            comment = "C function 'BinDist' copied from package 'stats'"), 

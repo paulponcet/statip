@@ -71,6 +71,7 @@
 #' \code{\link[stats]{density}} and \code{\link[stats]{approxfun}} 
 #' from package \pkg{stats}. 
 #' 
+#' @useDynLib statip, .registration=TRUE
 #' @useDynLib statip BinDist
 #' @importFrom stats approxfun
 #' @importFrom stats fft
