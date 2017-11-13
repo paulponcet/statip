@@ -5,9 +5,9 @@
 \alias{mfv1}
 \title{Most frequent value(s)}
 \usage{
-mfv(x, na.rm = FALSE)
+mfv(x, na.rm = FALSE, ...)
 
-mfv1(x, na.rm = FALSE)
+mfv1(x, na.rm = FALSE, ...)
 }
 \arguments{
 \item{x}{Vector of observations (of type numeric, integer, character, factor, or 
@@ -16,18 +16,21 @@ logical).
 
 \item{na.rm}{logical. If \code{TRUE}, missing values do not interfer 
 with the result, see 'Details'.}
+
+\item{...}{Additional arguments (not used).}
 }
 \value{
 The function \code{mfv} returns a vector of the same type as \code{x}.
-One should be aware that this vector can be of length \code{> 1}, in case of multiple modes.
-\code{mfv1} is safer in the sense that it always 
-returns a vector of length \code{1} (the first of the modes found).
+One should be aware that this vector can be of length \code{> 1}, in case of 
+multiple modes.
+\code{mfv1} always returns a vector of length \code{1} 
+(the first of the modes found).
 }
 \description{
 The function \code{mfv} returns the most frequent value(s) (or mode(s))
 found in a vector.
-The function \code{mfv1} returns the first of these values, so that \code{mfv1(x)} 
-is identical to \code{mfv(x)[[1L]]}.
+The function \code{mfv1} returns the first of these values, so that 
+\code{mfv1(x)} is identical to \code{mfv(x)[[1L]]}.
 }
 \details{
 See David Smith' blog post 

@@ -4,8 +4,8 @@
 #' @description
 #' The function \code{mfv} returns the most frequent value(s) (or mode(s))
 #' found in a vector.
-#' The function \code{mfv1} returns the first of these values, so that \code{mfv1(x)} 
-#' is identical to \code{mfv(x)[[1L]]}. 
+#' The function \code{mfv1} returns the first of these values, so that 
+#' \code{mfv1(x)} is identical to \code{mfv(x)[[1L]]}. 
 #' 
 #' @details 
 #' See David Smith' blog post 
@@ -31,12 +31,16 @@
 #' @param na.rm 
 #' logical. If \code{TRUE}, missing values do not interfer 
 #' with the result, see 'Details'. 
+#' 
+#' @param ...
+#' Additional arguments (not used). 
 #'
 #' @return
 #' The function \code{mfv} returns a vector of the same type as \code{x}.
-#' One should be aware that this vector can be of length \code{> 1}, in case of multiple modes.
-#' \code{mfv1} is safer in the sense that it always 
-#' returns a vector of length \code{1} (the first of the modes found). 
+#' One should be aware that this vector can be of length \code{> 1}, in case of 
+#' multiple modes.
+#' \code{mfv1} always returns a vector of length \code{1} 
+#' (the first of the modes found). 
 #'
 #' @export
 #'
@@ -60,7 +64,8 @@
 #' 
 mfv <-
 function(x,
-         na.rm = FALSE)
+         na.rm = FALSE, 
+         ...)
 {
   cl <- typeof(x) #class(x)[[1L]]
   n <- length(x)
@@ -91,7 +96,8 @@ function(x,
 #'
 mfv1 <-
 function(x, 
-         na.rm = FALSE)
+         na.rm = FALSE, 
+         ...)
 {
-  mfv(x, na.rm = na.rm)[[1L]]
+  mfv(x, na.rm = na.rm, ...)[[1L]]
 }

@@ -1,3 +1,9 @@
+# statip 0.1.6
+
+* '...' argument added in 'mfv()' and 'mfv1()' (useful for the subsequent call
+of these functions within package 'modeest')
+
+
 # statip 0.1.5
 
 * 'mfv()' was not working with factors.
