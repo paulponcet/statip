@@ -1,3 +1,17 @@
+# statip 0.1.9
+
+* Function 'bandwidth()' added. 
+* Function 'if_else()' from package 'dplyr' is no longer used since it 
+currently inconsistently transforms a matrix into a vector; the usual 'ifelse()' 
+is used instead. 
+
+
+# statip 0.1.8
+
+* Function 'predict.kmeans()' added (with dependency to package 'clue').
+* Function 'asplinefun()' added.
+
+
 # statip 0.1.6
 
 * '...' argument added in 'mfv()' and 'mfv1()' (useful for the subsequent call

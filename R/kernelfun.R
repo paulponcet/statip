@@ -23,7 +23,7 @@
 #' @seealso 
 #' \code{\link[stats]{density}} in package \pkg{stats}. 
 #' 
-#' @importFrom dplyr if_else
+#  #' @importFrom dplyr if_else
 #' @export
 #' 
 #' @examples 
@@ -76,7 +76,7 @@ function(x,
 {
   a <- sqrt(7)
   ax <- abs(x)
-  dplyr::if_else(ax < a, (15/16) * (1 - (ax/a)^2)^2/a, 0)
+  ifelse(ax < a, (15/16) * (1 - (ax/a)^2)^2/a, 0)
 }
 
 
@@ -87,7 +87,7 @@ function(x,
 {
   a <- sqrt(7)
   ax <- abs(x)
-  dplyr::if_else(ax < a, -(15/4) * x * (1 - (ax/a)^2)/a^3, 0)
+  ifelse(ax < a, -(15/4) * x * (1 - (ax/a)^2)/a^3, 0)
 }
 
 
@@ -95,7 +95,7 @@ function(x,
 function(x,
          ...)
 {
-  dplyr::if_else(abs(x) <= 1, 1/2, 0)
+  ifelse(abs(x) <= 1, 1/2, 0)
 }
 
 
@@ -113,7 +113,7 @@ function(x,
          ...)
 {
   a <- 1/sqrt(1/3 - 2/pi^2)
-  dplyr::if_else(abs(x) < a, (1 + cos(pi*x/a))/(2*a), 0)
+  ifelse(abs(x) < a, (1 + cos(pi*x/a))/(2*a), 0)
 }
 
 
@@ -123,7 +123,7 @@ function(x,
          ...)
 {
   a <- 1/sqrt(1/3 - 2/pi^2)
-  dplyr::if_else(abs(x) < a, -(pi/(2*a^2))*sin(pi*x/a), 0)
+  ifelse(abs(x) < a, -(pi/(2*a^2))*sin(pi*x/a), 0)
 }
 
 
@@ -132,7 +132,7 @@ function(x,
          ...)
 {
   #ax <- abs(x)
-  dplyr::if_else(abs(x) <= 1, (15/32) * (3 - 10*x^2 + 7*x^4), 0)
+  ifelse(abs(x) <= 1, (15/32) * (3 - 10*x^2 + 7*x^4), 0)
 }
 
 
@@ -141,7 +141,7 @@ function(x,
 function(x,
          ...)
 {
-  dplyr::if_else(abs(x) <= 1, (15/32) * (-20*x + 28*x^3), 0)
+  ifelse(abs(x) <= 1, (15/32) * (-20*x + 28*x^3), 0)
 }
 
 
@@ -149,7 +149,7 @@ function(x,
 function(x,
          ...)
 {
-  dplyr::if_else(abs(x) <= 1, (3/4) * (1 - x^2), 0)
+  ifelse(abs(x) <= 1, (3/4) * (1 - x^2), 0)
 }
 
 
@@ -158,7 +158,7 @@ function(x,
 function(x,
          ...)
 {
-  dplyr::if_else(abs(x) <= 1, (-3*x/2), 0)
+  ifelse(abs(x) <= 1, (-3*x/2), 0)
 }
 
 
@@ -184,7 +184,7 @@ function(x,
          ...)
 {
   a <- 1/sqrt(1 - 8/pi^2)
-  dplyr::if_else(abs(x) < a, (pi/4) * cos(pi * x/(2*a))/a, 0)
+  ifelse(abs(x) < a, (pi/4) * cos(pi * x/(2*a))/a, 0)
 }
 
 
@@ -194,7 +194,7 @@ function(x,
          ...)
 {
   a <- 1/sqrt(1 - 8/pi^2)
-  dplyr::if_else(abs(x) < a, -(pi^2/(8*a^2)) * sin(pi * x/(2*a)), 0)
+  ifelse(abs(x) < a, -(pi^2/(8*a^2)) * sin(pi * x/(2*a)), 0)
 }
 
 
@@ -203,7 +203,7 @@ function(x,
          ...)
 {
   a <- sqrt(3)
-  dplyr::if_else(abs(x) < a, 0.5/a, 0)
+  ifelse(abs(x) < a, 0.5/a, 0)
 }
 
 
@@ -221,7 +221,7 @@ function(x,
          ...)
 {
   ax <- abs(x)
-  dplyr::if_else(ax <= 1, (1 - ax), 0)
+  ifelse(ax <= 1, (1 - ax), 0)
 }
 
 
@@ -231,5 +231,5 @@ function(x,
          ...)
 {
   ax <- abs(x)
-  dplyr::if_else(ax <= 1, -sign(x), 0)
+  ifelse(ax <= 1, -sign(x), 0)
 }
