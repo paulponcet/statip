@@ -1,6 +1,6 @@
 Package: statip
 Type: Package
-Title: Statistical Functions for Probability Distributions
+Title: Statistical Functions for Probability Distributions and Regression
 Version: 0.2.0
 Date: 2018-07-31
 Authors@R: c(person("Paul", "Poncet", , "paulponcet@yahoo.fr", role = c("aut", "cre")), 
