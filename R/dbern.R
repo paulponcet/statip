@@ -59,7 +59,8 @@ function(p,
          lower.tail = TRUE, 
          log.p =FALSE)
 {
-  stats::qbinom(p, size = 1, prob = prob, lower.tail = lower.tail, log.p = log.p)
+  stats::qbinom(p, size = 1, 
+                prob = prob, lower.tail = lower.tail, log.p = log.p)
 }
 
 
@@ -73,7 +74,8 @@ function(q,
          lower.tail = TRUE, 
          log.p = FALSE)
 {
-  stats::pbinom(q, size = 1, prob = prob, lower.tail = lower.tail, log.p = log.p)
+  stats::pbinom(q, size = 1, 
+                prob = prob, lower.tail = lower.tail, log.p = log.p)
 }
 
 

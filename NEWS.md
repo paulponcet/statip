@@ -1,3 +1,8 @@
+# statip 0.2.0
+
+* Function 'picor()' added for univariate piecewise-constant regression. 
+
+
 # statip 0.1.9
 
 * Function 'bandwidth()' added. 
