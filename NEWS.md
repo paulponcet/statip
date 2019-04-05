@@ -1,6 +1,7 @@
-# statip 0.2.0
+# statip 0.2.1
 
 * Function 'picor()' added for univariate piecewise-constant regression. 
+* Use 'model.frame()' to improve the way formulas are processed in 'picor()'. 
 
 
 # statip 0.1.9

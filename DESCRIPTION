@@ -1,8 +1,8 @@
 Package: statip
 Type: Package
 Title: Statistical Functions for Probability Distributions and Regression
-Version: 0.2.0
-Date: 2018-07-31
+Version: 0.2.1
+Date: 2019-04-05
 Authors@R: c(person("Paul", "Poncet", , "paulponcet@yahoo.fr", role = c("aut", "cre")), 
     person("The R Core Team", role = c("aut", "cph"), 
            comment = "C function 'BinDist' copied from package 'stats'"), 

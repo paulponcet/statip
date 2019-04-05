@@ -46,7 +46,7 @@
 #' 
 #' @importFrom bazar as.fun
 #' @importFrom rpart rpart
-#' @importFrom stats isoreg knots
+#' @importFrom stats isoreg knots model.frame
 #' @export
 #' 
 #' @examples 
@@ -66,16 +66,17 @@ function(formula,
          min_length = 0,
          ...)
 {
-  v <- all.vars(formula)
-  y <- data[[v[1L]]]
-  stopifnot(is.numeric(y))
-  x <- v[-1L]
-  stopifnot(length(x)==0L || (length(x)==1L && is.numeric(data[[x]])))
-  if (length(x)==0L) {
-    x <- 1:nrow(data)
+  df = stats::model.frame(formula, data)
+  if (ncol(df) == 1L) {
+    x = 1L:nrow(df)
+  } else if (ncol(df) != 2L) {
+    stop("incorrect formula", call. = FALSE)
   } else {
-    x <- data[[x]]
+    x = df[[2L]]
   }
+  stopifnot(is.numeric(x))
+  y = df[[1L]]
+  stopifnot(is.numeric(y))
   
   if (!missing(method) && method == "isotonic") {
     r <- stats::isoreg(x = x, y = y)
