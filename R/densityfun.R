@@ -73,13 +73,8 @@
 #' 
 #' @useDynLib statip, .registration=TRUE
 #' @useDynLib statip BinDist
-#' @importFrom stats approxfun
-#' @importFrom stats fft
-#' @importFrom stats bw.nrd0
-#' @importFrom stats bw.nrd
-#' @importFrom stats bw.ucv
-#' @importFrom stats bw.bcv
-#' @importFrom stats bw.SJ
+#' @importFrom stats approxfun fft
+#' @importFrom stats bw.bcv bw.nrd0 bw.nrd bw.SJ bw.ucv
 #' @export
 #' 
 #' @examples 
@@ -103,23 +98,23 @@ function(x,
          ...)
 {
   if (!missing(...))
-    warning("non-matched further arguments are disregarded")
+    warning("non-matched further arguments are disregarded", call. = FALSE)
   if (!missing(window) && missing(kernel))
     kernel <- window
   kernel <- match.arg(kernel, .kernelsList())
   #if (give.Rkern) return(kernel_properties(kernel)$canonical_bandwidth)
   if (!is.numeric(x))
-    stop("argument 'x' must be numeric")
+    stop("argument 'x' must be numeric", call. = FALSE)
   x <- as.vector(x)
   x.na <- is.na(x)
   if (any(x.na)) {
     if (na.rm)
       x <- x[!x.na]
-    else stop("'x' contains missing values")
+    else stop("'x' contains missing values", call. = FALSE)
   }
   N <- nx <- as.integer(length(x))
   if (is.na(N))
-    stop("invalid value of length(x)")
+    stop("invalid value of length(x)", call. = FALSE)
   x.finite <- is.finite(x)
   if (any(!x.finite)) {
     x <- x[x.finite]
@@ -130,20 +125,20 @@ function(x,
     totMass <- nx/N
   } else {
     if (length(weights) != N)
-      stop("'x' and 'weights' have unequal length")
+      stop("'x' and 'weights' have unequal length", call. = FALSE)
     if (!all(is.finite(weights)))
-      stop("'weights' must all be finite")
+      stop("'weights' must all be finite", call. = FALSE)
     if (any(weights < 0))
-      stop("'weights' must not be negative")
+      stop("'weights' must not be negative", call. = FALSE)
     wsum <- sum(weights)
     if (any(!x.finite)) {
       weights <- weights[x.finite]
       totMass <- sum(weights)/wsum
     } else totMass <- 1
     if (!isTRUE(all.equal(1, wsum)))
-      warning("sum(weights) != 1  -- will not get true density")
+      warning("sum(weights) != 1  -- will not get true density", call. = FALSE)
   }
-  n.user <- n
+  #n.user <- n
   n <- max(n, 512)
   if (n > 512)
     n <- 2^ceiling(log2(n))
@@ -158,18 +153,18 @@ function(x,
   if (is.character(bw))
     bw <- bandwidth(x, bw)
   if (!is.finite(bw))
-    stop("non-finite 'bw'")
+    stop("non-finite 'bw'", call. = FALSE)
   bw <- adjust * bw
   if (bw <= 0)
-    stop("'bw' is not positive")
+    stop("'bw' is not positive", call. = FALSE)
   if (missing(from))
     from <- min(x) - cut * bw
   if (missing(to))
     to <- max(x) + cut * bw
   if (!is.finite(from))
-    stop("non-finite 'from'")
+    stop("non-finite 'from'", call. = FALSE)
   if (!is.finite(to))
-    stop("non-finite 'to'")
+    stop("non-finite 'to'", call. = FALSE)
   lo <- from - 4 * bw
   up <- to + 4 * bw
   y <- .Call(BinDist, x, weights, lo, up, n) * totMass

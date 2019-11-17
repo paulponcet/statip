@@ -146,12 +146,12 @@ function(name,
          derivative = derivative)
   } else {
     list(canonical_bandwidth = canonical_bandwidth, 
-       continuity = continuity, 
-       differentiability = differentiability,
-       fac = fac, 
-       integral_K = integral_K, 
-       integral_K2 = integral_K2, 
-       name = name, 
-       derivative = derivative)
+         continuity = continuity, 
+         differentiability = differentiability,
+         fac = fac, 
+         integral_K = integral_K, 
+         integral_K2 = integral_K2, 
+         name = name, 
+         derivative = derivative)
   }
 }
