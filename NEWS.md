@@ -1,49 +1,53 @@
-# statip 0.2.1
+# statip 0.2.3 (2019-11-17)
 
-* Function 'picor()' added for univariate piecewise-constant regression. 
-* Use 'model.frame()' to improve the way formulas are processed in 'picor()'. 
+## Bug fixes
+
+* Fix bug in `prune()`. 
+
+* Now `hellinger()` returns the Hellinger distance, not the square of it (Issue #1, thanks to benjones13).
+
+## Features
+
+* Use `model.frame()` to improve the way formulas are processed in `picor()`. 
+
+* Now `mfv()` is powered by a function `tableNA()` and returns a factor with the same levels as `x`, when `x` is itself a factor. 
+
+* In `mfv()` the argument `na.rm` is soft-deprecated (so still accepted for now, with a message thrown); the default argument is now called `na_rm`. 
+
+* Add various statistical functions: `cv()` (coefficient of variation), `midhinge()`, `midrange()`, `trimean()`. 
+
+* Add `histo()` to compute a histogram and `find_breaks()` to give breakpoints just like `MASS::truehist()` does.
 
 
-# statip 0.1.9
+# statip 0.2.0
 
-* Function 'bandwidth()' added. 
-* Function 'if_else()' from package 'dplyr' is no longer used since it 
-currently inconsistently transforms a matrix into a vector; the base 'ifelse()' 
+## Features
+
+* Add function `picor()` for univariate piecewise-constant regression. 
+
+* Add function `bandwidth()`. 
+
+* Add function `predict.kmeans()` (with dependency to package `clue`).
+
+* Add `...` argument in `mfv()` and `mfv1()` (useful for the subsequent call of these functions within package 'modeest'). 
+
+## Performance
+
+* Function `if_else()` from package 'dplyr' is no longer used since it 
+currently inconsistently transforms a matrix into a vector; the base `ifelse()` 
 is used instead. 
-
-
-# statip 0.1.8
-
-* Function 'predict.kmeans()' added (with dependency to package 'clue').
-
-
-# statip 0.1.6
-
-* '...' argument added in 'mfv()' and 'mfv1()' (useful for the subsequent call
-of these functions within package 'modeest'). 
 
 
 # statip 0.1.5
 
-* 'mfv()' was not working with factors.
+* `mfv()` was not working with factors.
 
 
 # statip 0.1.4
 
-* Change 'mfv()' to better take account of missing values. 
-
-
-# statip 0.1.3
-
 * Update authors list. 
 
+* Add functions `mfv()` and `mfv1()`, which compute the mode (most frequent value) 
+found in a vector of discrete values. 
 
-# statip 0.1.2
-
-* Small updates before CRAN submission. 
-
-
-# statip 0.1.1
-
-* Functions 'mfv()' and 'mfv1()' for the mode (most frequent value) 
-found in a vector. 
+* Add small updates before CRAN submission. 
