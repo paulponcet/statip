@@ -13,7 +13,7 @@ kernel_properties(name, derivative = FALSE)
 
 kernelfun(name, ...)
 
-\method{kernelfun}{function}(name, ...)
+\method{kernelfun}{`function`}(name, ...)
 
 \method{kernelfun}{character}(name, derivative = FALSE, ...)
 

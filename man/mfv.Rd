@@ -2,22 +2,28 @@
 % Please edit documentation in R/mfv.R
 \name{mfv}
 \alias{mfv}
+\alias{mfv.default}
+\alias{mfv.tableNA}
 \alias{mfv1}
 \title{Most frequent value(s)}
 \usage{
-mfv(x, na.rm = FALSE, ...)
+mfv(x, ...)
 
-mfv1(x, na.rm = FALSE, ...)
+\method{mfv}{default}(x, na_rm = FALSE, ...)
+
+\method{mfv}{tableNA}(x, na_rm = FALSE, ...)
+
+mfv1(x, na_rm = FALSE, ...)
 }
 \arguments{
 \item{x}{Vector of observations (of type numeric, integer, character, factor, or 
 logical).
 \code{x} is to come from a discrete distribution.}
 
-\item{na.rm}{logical. If \code{TRUE}, missing values do not interfer 
-with the result, see 'Details'.}
+\item{...}{Additional arguments (currently not used).}
 
-\item{...}{Additional arguments (not used).}
+\item{na_rm}{logical. If \code{TRUE}, missing values do not interfer 
+with the result, see 'Details'.}
 }
 \value{
 The function \code{mfv} returns a vector of the same type as \code{x}.
@@ -27,7 +33,7 @@ multiple modes.
 (the first of the modes found).
 }
 \description{
-The function \code{mfv} returns the most frequent value(s) (or mode(s))
+The function \code{mfv()} returns the most frequent value(s) (or mode(s))
 found in a vector.
 The function \code{mfv1} returns the first of these values, so that 
 \code{mfv1(x)} is identical to \code{mfv(x)[[1L]]}.
@@ -39,25 +45,34 @@ to understand the philosophy followed in the code of \code{mfv} for missing
 values treatment.
 }
 \note{
-\code{mfv} calls the function \code{\link{tabulate}}.
+\code{mfv()} calls the function \code{\link[base]{tabulate}}.
 }
 \examples{
 # Basic examples:
-mfv(c(3, 3, 3, 2, 4))            # 3
-mfv(c(TRUE, FALSE, TRUE))        # TRUE
-mfv(c("a", "a", "b", "a", "d"))  # "a"
+mfv(integer(0))                      # NaN
+mfv(c(3, 3, 3, 2, 4))                # 3
+mfv(c(TRUE, FALSE, TRUE))            # TRUE
+mfv(c("a", "a", "b", "a", "d"))      # "a"
 
-mfv(c("a", "a", "b", "b", "d"))  # c("a", "b")
-mfv1(c("a", "a", "b", "b", "d")) # "a"
+mfv(c("a", "a", "b", "b", "d"))      # c("a", "b")
+mfv1(c("a", "a", "b", "b", "d"))     # "a"
 
 # With missing values: 
-mfv(c(3, 3, 3, 2, NA))           # 3
-mfv(c(3, 3, 2, NA))              # NA
-mfv(c(3, 3, 2, NA), na.rm = TRUE)# 3
+mfv(c(3, 3, 3, 2, NA))               # 3
+mfv(c(3, 3, 2, NA))                  # NA
+mfv(c(3, 3, 2, NA), na_rm = TRUE)    # 3
+mfv(c(3, 3, 2, 2, NA))               # NA
+mfv(c(3, 3, 2, 2, NA), na_rm = TRUE) # c(2, 3)
+mfv1(c(3, 3, 2, 2, NA), na_rm = TRUE)# 2
 
 # With only missing values: 
 mfv(c(NA, NA))                   # NA
-mfv(c(NA, NA), na.rm = TRUE)     # NaN
+mfv(c(NA, NA), na_rm = TRUE)     # NaN
+
+# With factors
+mfv(factor(c("a", "b", "a")))
+mfv(factor(c("a", "b", "a", NA)))
+mfv(factor(c("a", "b", "a", NA)), na_rm = TRUE)
 
 }
 \references{

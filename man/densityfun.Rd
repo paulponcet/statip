@@ -4,9 +4,21 @@
 \alias{densityfun}
 \title{Kernel density estimation}
 \usage{
-densityfun(x, bw = "nrd0", adjust = 1, kernel = "gaussian",
-  weights = NULL, window = kernel, width, n = 512, from, to, cut = 3,
-  na.rm = FALSE, ...)
+densityfun(
+  x,
+  bw = "nrd0",
+  adjust = 1,
+  kernel = "gaussian",
+  weights = NULL,
+  window = kernel,
+  width,
+  n = 512,
+  from,
+  to,
+  cut = 3,
+  na.rm = FALSE,
+  ...
+)
 }
 \arguments{
 \item{x}{numeric. The data from which the estimate is to be computed.}
