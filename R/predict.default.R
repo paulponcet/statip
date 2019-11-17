@@ -3,8 +3,7 @@
 #' 
 #' @description 
 #' Default method of the \code{\link[stats]{predict}} generic 
-#' function, which can be used when the model object is empty 
-#' (see \code{\link[bazar]{is.empty}} in package \pkg{bazar}). 
+#' function, which can be used when the model object is empty. 
 #' 
 #' @param object
 #' A model object, possibly empty. 
@@ -21,10 +20,8 @@
 #' A vector of predictions. 
 #' 
 #' @seealso 
-#' \code{\link[stats]{predict}} from package \pkg{stats}, 
-#' \code{\link[bazar]{is.empty}} from package \pkg{bazar}. 
+#' \code{\link[stats]{predict}} from package \pkg{stats}.
 #' 
-#' @importFrom bazar is.empty
 #' @export
 #' 
 #' @examples 
@@ -36,7 +33,7 @@ function(object,
          newdata,
          ...)
 {
-  if (bazar::is.empty(object)) {
+  if (length(object) == 0L) {
     n <- if (missing(newdata)) 0L else nrow(newdata)
     return(rep(NA, n))
   }

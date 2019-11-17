@@ -15,14 +15,15 @@ or proper distribution names.}
 }
 \value{
 A character vector of the same length as \code{x}. 
-Elements of \code{x} that are not recognized are kept unchanged.
+Elements of \code{x} that are not recognized are kept unchanged 
+(yet in lowercase).
 }
 \description{
-The function \code{distr2name} converts abbreviated 
+The function \code{distr2name()} converts abbreviated 
 distribution names to proper distribution names 
 (e.g. \code{"norm"} becomes \code{"Gaussian"}). 
 
-The function \code{name2distr} does the reciprocal operation.
+The function \code{name2distr()} does the reciprocal operation.
 }
 \examples{
 distr2name(c("norm", "dnorm", "rhyper", "ppois"))

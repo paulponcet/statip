@@ -61,7 +61,11 @@ function(name,
          ...)
 {
   name <- match.arg(tolower(name), .kernelsList())
-  kname <- if (derivative) paste0(".kernel.d", name) else paste0(".kernel.", name)
+  kname <- if (derivative) { 
+    paste0(".kernel.d", name) 
+  } else { 
+      paste0(".kernel.", name) 
+    }
   Kfun <- function(x) {
     do.call(kname, list(x, ...))
   }

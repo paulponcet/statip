@@ -2,7 +2,7 @@
 #' Hellinger distance
 #' 
 #' @description 
-#' The function \code{hellinger} estimates the 
+#' Estimate the 
 #' \href{https://en.wikipedia.org/wiki/Hellinger_distance}{Hellinger distance} 
 #' between two random samples whose underdyling distributions 
 #' are continuous. 
@@ -25,18 +25,22 @@
 #' numeric. Upper limit passed to \code{\link[stats]{integrate}}. 
 #' 
 #' @param method
-#' integer. If \code{method=1}, the usual definition 
-#' of the Hellinger distance is used; if \code{method=2}, 
+#' integer. If \code{method = 1}, the usual definition 
+#' of the Hellinger distance is used; if \code{method = 2}, 
 #' an alternative formula is used. 
 #' 
 #' @param ...
 #' Additional parameters to be passed to \code{\link[statip]{densityfun}}. 
 #' 
 #' @return 
-#' A numeric value. 
+#' A numeric value, the Hellinger distance. 
+#' 
+#' @references 
+#' \url{https://en.wikipedia.org/wiki/Hellinger_distance}.
 #' 
 #' @seealso 
-#' \code{\link[distrEx]{HellingerDist}} in package \pkg{distrEx}. 
+#' \code{\link[distrEx]{HellingerDist}} in package \pkg{distrEx}.
+#' 
 #' 
 #' @importFrom stats integrate
 #' @export
@@ -59,11 +63,12 @@ function(x,
   fy <- densityfun(y, ...)
   if (method == 1) {
     g <- function(z) (fx(z)^0.5 - fy(z)^0.5)^2
-    stats::integrate(g, lower, upper)$value/2
+    h2 <- stats::integrate(g, lower, upper)$value/2
   } else if (method == 2) {
     g <- function(z) (fx(z)*fy(z))^0.5
-    1 - stats::integrate(g, lower, upper)$value
+    h2 <- 1 - stats::integrate(g, lower, upper)$value
   } else {
-    stop("incorrect 'method' argument")
+    stop("incorrect 'method' argument", call. = FALSE)
   }
+  sqrt(h2)
 }

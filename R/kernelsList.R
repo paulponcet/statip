@@ -2,9 +2,7 @@
 #' @export
 #' @rdname kernelfun
 #' 
-.kernelsList <- 
-function() 
-{
+.kernelsList <- function() {
   c("biweight",
     "chernoff",
     "cosine",

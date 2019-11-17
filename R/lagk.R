@@ -48,8 +48,8 @@ function (x,
 {
   nx <- length(x)
   if(nx < abs(k)) {
-    warning (paste("argument 'x' is too short to be lagged from ", k, " lags", 
-                   sep = ""))
+    warning(paste0("argument 'x' is too short to be lagged from ", k, " lags"), 
+            call. = FALSE)
     if (na) {
       return(rep(NA,nx))
     } else {

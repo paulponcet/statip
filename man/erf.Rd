@@ -9,16 +9,19 @@ erf(x, ...)
 \arguments{
 \item{x}{numeric. A vector of input values.}
 
-\item{...}{additional arguments to be passed to \code{\link{pnorm}}.}
+\item{...}{Additional arguments to be passed to \code{\link[stats]{pnorm}}.}
 }
 \value{
 A numeric vector of the same length as \code{x}.
 }
 \description{
-The function \code{erf} encodes the 
+The function \code{erf()} encodes the 
 \href{https://en.wikipedia.org/wiki/Error_function}{error function}, 
 defined as \code{erf(x) = 2 * F(x * sqrt(2)) - 1}, where 
 \code{F} is the Gaussian distribution function.
+}
+\references{
+\url{https://en.wikipedia.org/wiki/Error_function}.
 }
 \seealso{
 \code{\link[stats]{pnorm}} from package \pkg{stats}.

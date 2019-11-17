@@ -5,15 +5,9 @@
 \name{reexports}
 \alias{reexports}
 \alias{as.stepfun}
-\alias{reexports}
 \alias{knots}
-\alias{reexports}
 \alias{predict}
-\alias{reexports}
 \alias{plot}
-\alias{reexports}
-\alias{predict}
-\alias{reexports}
 \alias{na.pass}
 \title{Objects exported from other packages}
 \keyword{internal}
@@ -24,6 +18,6 @@ below to see their documentation.
 \describe{
   \item{graphics}{\code{\link[graphics]{plot}}}
 
-  \item{stats}{\code{\link[stats]{as.stepfun}}, \code{\link[stats]{knots}}, \code{\link[stats]{predict}}, \code{\link[stats]{predict}}, \code{\link[stats]{na.pass}}}
+  \item{stats}{\code{\link[stats]{as.stepfun}}, \code{\link[stats]{knots}}, \code{\link[stats]{na.pass}}, \code{\link[stats]{predict}}, \code{\link[stats]{predict}}}
 }}
 

@@ -2,9 +2,7 @@
 #' @export
 #' @rdname distr2name
 #' 
-name2distr <- 
-function(x)
-{
+name2distr <- function(x) {
   x <- tolower(x)
   x <- chartr(" -", "__", x)
   x[x == "bernoulli"] <- "bern"

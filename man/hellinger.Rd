@@ -15,17 +15,17 @@ hellinger(x, y, lower = -Inf, upper = Inf, method = 1, ...)
 
 \item{upper}{numeric. Upper limit passed to \code{\link[stats]{integrate}}.}
 
-\item{method}{integer. If \code{method=1}, the usual definition 
-of the Hellinger distance is used; if \code{method=2}, 
+\item{method}{integer. If \code{method = 1}, the usual definition 
+of the Hellinger distance is used; if \code{method = 2}, 
 an alternative formula is used.}
 
 \item{...}{Additional parameters to be passed to \code{\link[statip]{densityfun}}.}
 }
 \value{
-A numeric value.
+A numeric value, the Hellinger distance.
 }
 \description{
-The function \code{hellinger} estimates the 
+Estimate the 
 \href{https://en.wikipedia.org/wiki/Hellinger_distance}{Hellinger distance} 
 between two random samples whose underdyling distributions 
 are continuous.
@@ -41,6 +41,9 @@ y <- rnorm(1000, 10, 15)
 hellinger(x, y, -Inf, Inf)
 hellinger(x, y, -Inf, Inf, method = 2)
 
+}
+\references{
+\url{https://en.wikipedia.org/wiki/Hellinger_distance}.
 }
 \seealso{
 \code{\link[distrEx]{HellingerDist}} in package \pkg{distrEx}.
